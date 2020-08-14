@@ -63,7 +63,7 @@ export default class ReviewCourseRegistration extends Component {
 
         if (data) {
             let courses = [];
-
+// eslint-disable-next-line
             data.map((d) => {
                 courses.push([d.course.course_number, d.course.course_title, d.course.credit_hour, d.comment]);
             });

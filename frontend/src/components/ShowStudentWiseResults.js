@@ -4,8 +4,8 @@ import React, {Component} from "react";
 import ApiCalls from "../services/APICalls";
 import TopBar from "./TopBar";
 import UserService from "../services/User";
-import SpreadSheet from "./SpreadSheet";
-import YearTermSessionBatchComponent from "../components/YearTermSessionBatchComponent";
+//import SpreadSheet from "./SpreadSheet";
+//import YearTermSessionBatchComponent from "../components/YearTermSessionBatchComponent";
 
 export default class ShowStudentWiseResults extends Component {
 
@@ -94,7 +94,7 @@ export default class ShowStudentWiseResults extends Component {
                                                         <td>{single_result[2][1]}</td>
                                                         <th>{single_result[3]}</th>
                                                         <th>{single_result[3] * single_result[2][1]}</th>
-                                                        <th>{single_result[4] == true ? "Retake" : ""}</th>
+                                                        <th>{single_result[4] === true ? "Retake" : ""}</th>
 
                                                     </tr>
                                                 )

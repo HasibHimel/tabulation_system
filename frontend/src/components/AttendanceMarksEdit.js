@@ -5,7 +5,7 @@ import ApiCalls from "../services/APICalls";
 import TopBar from "./TopBar";
 import EditSpreadSheet from "./EditSpreadSheet";
 import YearTermSessionBatchComponent from "../components/YearTermSessionBatchComponent";
-import SpreadSheet from "./SpreadSheet";
+//import SpreadSheet from "./SpreadSheet";
 
 export default class AttendanceMarksEdit extends Component {
 
@@ -61,6 +61,7 @@ export default class AttendanceMarksEdit extends Component {
             if (response.data.data.length > 0) {
                 this.setState({course_number: response.data.data[0].course_data.course_number});
             }
+            // eslint-disable-next-line
             response.data.data.map((course) => {
                 this.setState({courseList: [...this.state.courseList, course]});
             });

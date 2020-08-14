@@ -62,6 +62,7 @@ export default class AttendanceMarksEntry extends Component {
             if (response.data.data.length > 0) {
                 this.setState({course_number: response.data.data[0].course_data.course_number});
             }
+            // eslint-disable-next-line
             response.data.data.map((course) => {
                 this.setState({courseList: [...this.state.courseList, course]});
             });

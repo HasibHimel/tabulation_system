@@ -1,10 +1,10 @@
-import React from "react";
+//import React from "react";
 import axios from "axios";
 
 import UserService from "../services/User";
 
 import AppConfig from "../config/AppConfig";
-import User from "./User";
+//import User from "./User";
 
 
 export default class APICalls {

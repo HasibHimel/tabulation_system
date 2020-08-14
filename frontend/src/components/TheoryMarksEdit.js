@@ -63,6 +63,7 @@ export default class TheoryMarksEdit extends Component {
             if (response.data.data.length > 0) {
                 this.setState({course_number: response.data.data[0].course_data.course_number});
             }
+            // eslint-disable-next-line
             response.data.data.map((course) => {
                 this.setState({courseList: [...this.state.courseList, course]});
             });
@@ -96,14 +97,15 @@ export default class TheoryMarksEdit extends Component {
                             <select className="form-control" onChange={(e) => {
                                 this.setState({course_number: e.target.value})
                             }}>
-                                {this.state.courseList.map((course) => {
-                                    {
-                                        if (course.course_data.course_type == 1) {
+                                {// eslint-disable-next-line
+                                this.state.courseList.map((course) => {
+                                    // eslint-disable-next-lines
+                                        if (course.course_data.course_type === 1) {
                                             return <option key={course.course_data.course_title}
                                                            value={course.course_data.course_number}>
                                                 {course.course_data.course_number} : {course.course_data.course_title}</option>
                                         }
-                                    }
+                                    
                                 })}
                             </select>
                         </div>
@@ -147,7 +149,7 @@ export default class TheoryMarksEdit extends Component {
                             </div>
                         </div>
                         {
-                            this.state.type == "Class Test" ?
+                            this.state.type === "Class Test" ?
                                 <div className="col-md-4">
                                     <div className="row">
                                         <div className="col-md-6">

@@ -3,7 +3,7 @@ import React, {Component} from "react";
 
 import ApiCalls from "../services/APICalls";
 import TopBar from "./TopBar";
-import SpreadSheet from "./SpreadSheet";
+//import SpreadSheet from "./SpreadSheet";
 import YearTermSessionBatchComponent from "../components/YearTermSessionBatchComponent";
 
 export default class ShowAttendancetMarks extends Component {
@@ -40,6 +40,7 @@ export default class ShowAttendancetMarks extends Component {
 
         const data = response.data.data;
         this.setState({marks: []});
+        // eslint-disable-next-line
         data.map((course) => {
             this.setState({marks: [...this.state.marks, course]});
         });

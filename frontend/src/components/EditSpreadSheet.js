@@ -18,6 +18,7 @@ export default class EditSpreadSheet extends Component {
         let marks = [];
         let validation_marks_list = [];
 
+        // eslint-disable-next-line
         this.props.students.map((course) => {
             const mark = document.getElementsByName(course.course_registration.student.student_id)[0].value;
             marks.push([course.course_registration.student.student_id, mark]);
@@ -43,6 +44,7 @@ export default class EditSpreadSheet extends Component {
             <div className="col-md-4"></div>
         </div>);
 
+// eslint-disable-next-line
         this.props.students.map((course, index) => {
 
 

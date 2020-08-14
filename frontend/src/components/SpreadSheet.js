@@ -17,6 +17,7 @@ export default class SpreadSheet extends Component {
     submit_marks() {
         let marks = [];
         let validation_marks_list = [];
+        // eslint-disable-next-line
         this.props.students.map((student_id) => {
             const mark = document.getElementsByName(student_id)[0].value;
             marks.push([student_id, mark]);
@@ -45,6 +46,7 @@ export default class SpreadSheet extends Component {
             <div className="col-md-4"></div>
         </div>);
 
+        // eslint-disable-next-line
         this.props.students.map((student_id) => {
 
 

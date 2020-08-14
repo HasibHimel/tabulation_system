@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import axios from "axios";
+//import axios from "axios";
 
 import YearTermSessionBatchComponent from "./YearTermSessionBatchComponent";
 import TopBar from "./TopBar";
@@ -57,13 +57,15 @@ export default class CourseRegistration extends Component {
         const response = await this.apiCalls.get_course_response(session, year, term);
         this.setState({courseList: [], expectedCourses: [], registeredCourses: [], pendingCourses: []});
         if (response.data.status) {
+            // eslint-disable-next-line
             response.data.data.map((course) => {
                 this.setState({courseList: [...this.state.courseList, course]});
             });
-
+            // eslint-disable-next-line
             response.data.registered.map((course) => {
                 this.setState({registeredCourses: [...this.state.registeredCourses, course]});
             });
+            // eslint-disable-next-line
             response.data.pending.map((course) => {
                 this.setState({
                     pendingCourses: [...this.state.registeredCourses, course],
@@ -103,6 +105,7 @@ export default class CourseRegistration extends Component {
 
     update_credit_hours() {
         let credit = 0;
+        // eslint-disable-next-line
         this.state.expectedCourses.map((course) => {
             credit += course.course_data.credit_hour;
         });
@@ -166,7 +169,9 @@ export default class CourseRegistration extends Component {
                                             <td>{courseData.course_number}</td>
                                             <td>{courseData.course_title}</td>
                                             <td>{courseData.credit_hour}</td>
-                                            <td><a href="javascript:;"
+                                            <td><a 
+                                            // eslint-disable-next-line
+                                            href="javascript:;"
                                                    onClick={() => this.removeFromExpectedCourses(index)}><span
                                                 className="fa fa-minus-circle" style={{color: "red"}}></span></a></td>
                                         </tr>;
@@ -195,7 +200,9 @@ export default class CourseRegistration extends Component {
                                             <td>{courseData.course_number}</td>
                                             <td>{courseData.course_title}</td>
                                             <td>{courseData.credit_hour}</td>
-                                            <td><a href="javascript:;" onClick={() => this.addToExpectedCourses(index)}><span
+                                            <td><a 
+                                            // eslint-disable-next-line
+                                            href="javascript:;" onClick={() => this.addToExpectedCourses(index)}><span
                                                 className="fa fa-plus-circle"></span></a></td>
                                         </tr>;
                                     })}

@@ -3,7 +3,7 @@ import React, {Component} from "react";
 
 import ApiCalls from "../services/APICalls";
 import TopBar from "./TopBar";
-import SpreadSheet from "./SpreadSheet";
+//import SpreadSheet from "./SpreadSheet";
 import YearTermSessionBatchComponent from "../components/YearTermSessionBatchComponent";
 
 export default class ShowTermWiseResultsTeacher extends Component {
@@ -61,6 +61,7 @@ export default class ShowTermWiseResultsTeacher extends Component {
                 this.setState({course_number: response.data.data[0].course_data.course_number});
 
             }
+            // eslint-disable-next-line
             response.data.data.map((course) => {
                 this.setState({courseList: [...this.state.courseList, course]});
             });
@@ -94,7 +95,7 @@ export default class ShowTermWiseResultsTeacher extends Component {
                             <td>{result[5]}</td>
                             <td>{result[1][0]}</td>
                             <td>{result[1][1]}</td>
-                            <td>{result[6] == true ? "Retake" : ""}</td>
+                            <td>{result[6] === true ? "Retake" : ""}</td>
 
                         </tr>
                     })}
@@ -120,7 +121,7 @@ export default class ShowTermWiseResultsTeacher extends Component {
                             <td>{result[5]}</td>
                             <td>{result[1][0]}</td>
                             <td>{result[1][1]}</td>
-                            <td>{result[6] == true ? "Retake" : ""}</td>
+                            <td>{result[6] === true ? "Retake" : ""}</td>
 
                         </tr>
                     })}

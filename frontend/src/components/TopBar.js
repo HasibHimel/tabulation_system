@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import UserService from "../services/User";
 
-import {NavLink} from "react-router-dom";
+//import {NavLink} from "react-router-dom";
 
 export default class TopBar extends Component {
 
@@ -39,7 +39,7 @@ export default class TopBar extends Component {
                             }
                             {this.user.student_id ?
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuStudent"
+                                    <a className="nav-link dropdown-toggle" id="navbarDropdownMenuStudent"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Marks
                                     </a>
@@ -53,7 +53,7 @@ export default class TopBar extends Component {
                             }
                             {this.user.student_id ?
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuStudent"
+                                    <a className="nav-link dropdown-toggle"  id="navbarDropdownMenuStudent"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Result
                                     </a>
@@ -65,7 +65,7 @@ export default class TopBar extends Component {
                             }
                             {this.user.student_id ?
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuStudent"
+                                    <a className="nav-link dropdown-toggle"  id="navbarDropdownMenuStudent"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Student
                                     </a>
@@ -81,7 +81,7 @@ export default class TopBar extends Component {
 
                             {!this.user.student_id ?
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuResult"
+                                    <a className="nav-link dropdown-toggle"  id="navbarDropdownMenuResult"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Marks Entry
                                     </a>
@@ -98,7 +98,7 @@ export default class TopBar extends Component {
 
                             {!this.user.student_id ?
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuResult"
+                                    <a className="nav-link dropdown-toggle"  id="navbarDropdownMenuResult"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Edit Marks
                                     </a>
@@ -111,7 +111,7 @@ export default class TopBar extends Component {
                                 : ""}
                             {!this.user.student_id ?
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuTeacher"
+                                    <a className="nav-link dropdown-toggle"  id="navbarDropdownMenuTeacher"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Result
                                     </a>
@@ -123,7 +123,7 @@ export default class TopBar extends Component {
                             }
                             {!this.user.student_id ?
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuTeacher"
+                                    <a className="nav-link dropdown-toggle"  id="navbarDropdownMenuTeacher"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Teacher
                                     </a>

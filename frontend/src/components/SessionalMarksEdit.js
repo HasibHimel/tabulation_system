@@ -5,7 +5,7 @@ import ApiCalls from "../services/APICalls";
 import TopBar from "./TopBar";
 import EditSpreadSheet from "./EditSpreadSheet";
 import YearTermSessionBatchComponent from "../components/YearTermSessionBatchComponent";
-import SpreadSheet from "./SpreadSheet";
+//import SpreadSheet from "./SpreadSheet";
 
 export default class SessionalyMarksEdit extends Component {
 
@@ -62,6 +62,7 @@ export default class SessionalyMarksEdit extends Component {
             if (response.data.data.length > 0) {
                 this.setState({course_number: response.data.data[0].course_data.course_number});
             }
+            // eslint-disable-next-line
             response.data.data.map((course) => {
                 this.setState({courseList: [...this.state.courseList, course]});
             });
@@ -95,14 +96,15 @@ export default class SessionalyMarksEdit extends Component {
                             <select className="form-control" onChange={(e) => {
                                 this.setState({course_number: e.target.value})
                             }}>
-                                {this.state.courseList.map((course) => {
-                                    {
-                                        if (course.course_data.course_type != 1) {
+                                {// eslint-disable-next-line
+                                this.state.courseList.map((course) => {
+                                    
+                                        if (course.course_data.course_type !== 1) {
                                             return <option key={course.course_data.course_title}
                                                            value={course.course_data.course_number}>
                                                 {course.course_data.course_number} : {course.course_data.course_title}</option>
                                         }
-                                    }
+                                    
                                 })}
                             </select>
                         </div>
@@ -142,7 +144,7 @@ export default class SessionalyMarksEdit extends Component {
                 <br/>
                 <EditSpreadSheet type="sessional" input_marks={this.input_marks} students={this.state.students}
                                  courseLise={this.state.courseList}
-                                 highest={this.state.type == "Sessional Assessment" ? 60 : 30}/>
+                                 highest={this.state.type === "Sessional Assessment" ? 60 : 30}/>
 
             </div>
         )
