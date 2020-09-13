@@ -71,13 +71,13 @@ def login(request):
             return Response({"status": False})
         else:
             if mode == "student":
-                student_object = Student.objects.filter(student_id=student_id).first()
+                student_object = Student.objects.filter(user=user).first()
                 student_serializer = StudentSerializer(student_object)
                 pprint(student_serializer.data)
                 return Response({"status": True, "data": student_serializer.data})
 
             elif mode == "teacher":
-                teacher_object = Teacher.objects.filter(email=email).first()
+                teacher_object = Teacher.objects.filter(user=user).first()
                 teacher_serializer = TeacherSerializer(teacher_object)
                 return Response({"status": True, "data": teacher_serializer.data})
 
